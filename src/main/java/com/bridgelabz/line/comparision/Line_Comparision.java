@@ -1,6 +1,5 @@
 package com.bridgelabz.line.comparision;
 
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Line_Comparision {
@@ -27,17 +26,20 @@ public class Line_Comparision {
         System.out.println("Enter the Value of y Co-ordinate 4th point: ");
         int b2 = line.nextInt();
 
-        double length_of_line1 =Math.sqrt((x2 - x1) *(x2 - x1) + (y2 - y1) * (y2 - y1));
+        Double length_of_line1 =Math.sqrt((x2 - x1) *(x2 - x1) + (y2 - y1) * (y2 - y1));
         System.out.println("length_of_line1 = " + length_of_line1);
 
-        double length_of_line2 =Math.sqrt((a2 - a1) *(a2 - a1) + (b2 - b1) * (b2 - b1));
+        Double length_of_line2 =Math.sqrt((a2 - a1) *(a2 - a1) + (b2 - b1) * (b2 - b1));
         System.out.println("length_of_line2 = " + length_of_line2);
 
-        boolean ans = Objects.equals(length_of_line1, length_of_line2);
-        if (ans)
-            System.out.println("Both line are equal");
+          int con = length_of_line1.compareTo(length_of_line2);
+        if (con > 0)
+            System.out.println("length of 1st end point greater than length of 2nd end point");
+
+        else if (con < 0)
+            System.out.println("length of 1st end point greater than length of 2nd end point");
 
         else
-            System.out.println("Both line are not equal");
+            System.out.println("Both line are equal");
     }
 }
